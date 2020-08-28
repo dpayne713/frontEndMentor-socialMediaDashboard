@@ -60,6 +60,7 @@ body {
 
 .container {
     padding: 0 14.3rem;
+    transition: all .2s linear; 
 }
 
 /*/////////////////////////////////////////////////////////
@@ -435,4 +436,11 @@ body {
         justify-content: center; 
     }
 
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        width: 140rem; 
+        margin: 0 auto; 
+    }
 }
