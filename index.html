@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+
+  
+</head>
+<body>
+
+  
+    <header class="header container">
+        <div class="header-title">
+          <h1 class="title">Social Media Dashboard</h1>
+          <p class="totalFollowers">Total Followers: 23,004</p>
+        </div>
+        <hr class="mobileHR">
+        <div class="header-switch">
+          <span class="darkModeText">Dark Mode</span>
+          <label class="switch">
+            <input type="checkbox" class="darkMode" name="darkMode" id="darkMode">
+            <span class="slider"></span>
+          </label>
+        </div>
+    </header>
+
+
+
+    <div class="accountsContainer container">
+
+      
+      <div class="totals totals--facebook" >
+          <a href="#">
+            <img src="./images/icon-facebook.svg" alt="facebook icon">
+            <span class="handle facebookHandle">@nathanf</span>
+            <p class="followersTotal facebook-followers-total">1987</p>
+            <p class="followersText">Followers</p>
+            <p class="newToday facebook-new-today green">12 Today</p>
+          </a>
+      </div>
+      
+      <div class="totals totals--twitter">
+        <a href="#">
+          <img src="./images/icon-twitter.svg" alt="twitter icon">
+          <span class="handle twitterHandle">@nathanf</span>
+          <p class="followersTotal twitter-followers-total">1044</p>
+          <p class="followersText">Followers</p>
+          <p class="newToday twitter-new-today red"> 99 Today</p>
+        </a>
+      </div>
+  
+      <div class="totals totals--instagram">
+        <a href="#">
+          <img src="./images/icon-instagram.svg" alt="instagram icon">
+          <span class="handle instagramHandle">@realnathanf</span>
+          <p class="followersTotal instagram-followers-total">11k</p>
+          <p class="followersText">Followers</p>
+          <p class="newToday instagram-new-today green"> 1099 Today</p>
+        </a>
+      </div>
+  
+      <div class="totals totals--youtube">
+        <a href="#">
+          <img src="./images/icon-youtube.svg" alt="youtube icon">
+          <span class="handle youtubeHandle">Nathan F.</span>
+          <p class="followersTotal youtube-followers-total">8239</p>
+          <p class="followersText">Subscribers</p>
+          <p class="newToday youtube-new-today red"> 144 Today</p>
+        </a>
+      </div>
+
+    </div>
+
+    <section class="overview container">
+      <h1 class="overviewToday">Overview - Today</h1>
+      
+      
+      <div class="grid">
+        
+
+          <div class="overviewBox">
+            <h3 class="overview--type">Page Views</h3>
+            <img src="./images/icon-facebook.svg" class="overview--image" alt="facebook icon">
+            <span class="overview--count">87</span>
+            <span class="overview--percent green">3%</span>
+          </div>
+      
+      
+      
+          <div class="overviewBox">
+            <h3 class="overview--type">Likes</h3>
+            <img src="./images/icon-facebook.svg" class="overview--image" alt="facebook icon">
+            <span class="overview--count">52</span>
+            <span class="overview--percent red">2%</span>
+          </div>
+       
+
+       
+          <div class="overviewBox">
+            <h3 class="overview--type">Likes</h3>
+            <img src="./images/icon-instagram.svg" class="overview--image" alt="instagram icon">
+            <span class="overview--count">5462</span>
+            <span class="overview--percent green">2257%</span>
+          </div>
+       
+      
+       
+          <div class="overviewBox">
+            <h3 class="overview--type">Profile Views</h3>
+            <img src="./images/icon-instagram.svg" class="overview--image" alt="instagram icon">
+            <span class="overview--count">52k</span>
+            <span class="overview--percent green">1375%</span>
+          </div>
+
+
+          <div class="overviewBox">
+            <h3 class="overview--type">Retweets</h3>
+            <img src="./images/icon-twitter.svg" class="overview--image" alt="twitter icon">
+            <span class="overview--count">117</span>
+            <span class="overview--percent green">303%</span>
+          </div>
+
+          <div class="overviewBox">
+            <h3 class="overview--type">Likes</h3>
+            <img src="./images/icon-twitter.svg" class="overview--image" alt="twitter icon">
+            <span class="overview--count">507</span>
+            <span class="overview--percent green">553%</span>
+          </div>
+
+          <div class="overviewBox">
+            <h3 class="overview--type">Likes</h3>
+            <img src="./images/icon-youtube.svg" class="overview--image" alt="youtube icon">
+            <span class="overview--count">107</span>
+            <span class="overview--percent red">19%</span>
+          </div>
+
+          <div class="overviewBox">
+            <h3 class="overview--type">Total Views</h3>
+            <img src="./images/icon-youtube.svg" class="overview--image" alt="youtube icon">
+            <span class="overview--count">1407</span>
+            <span class="overview--percent red">12%</span>
+          </div>
+
+      </div>
+        
+    
+
+    </div>
+
+
+
+
+
+ 
+
+
+
+
+  
+
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/dpayne713">David Payne</a>.
+  </div>
+
+
+
+  <script>
+
+    document.getElementById('darkMode').addEventListener('change', function(element) {
+        console.log(this.checked)
+        if(this.checked) {
+          document.documentElement.style.setProperty('--BG', 'hsl(230, 17%, 14%)');
+          document.documentElement.style.setProperty('--Top-BG-Pattern', 'hsl(232, 19%, 15%)');
+          document.documentElement.style.setProperty('--CardBG', 'hsl(228, 28%, 20%)');
+          document.documentElement.style.setProperty('--Text-blue', 'hsl(228, 34%, 66%)');
+          document.documentElement.style.setProperty('--Text', 'hsl(0, 0%, 100%)');
+        }
+        
+        else {
+          document.documentElement.style.setProperty('--BG', 'hsl(0, 0%, 100%)');
+          document.documentElement.style.setProperty('--Top-BG-Pattern', 'hsl(225, 100%, 98%)');
+          document.documentElement.style.setProperty('--CardBG', 'hsl(227, 47%, 96%)');
+          document.documentElement.style.setProperty('--Text-blue', 'hsl(228, 12%, 44%)');
+          document.documentElement.style.setProperty('--Text', 'hsl(230, 17%, 14%)');
+        }
+    });
+
+  </script>
+
+
+</body>
+</html>

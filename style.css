@@ -1,0 +1,438 @@
+:root {
+/* PRIMARY */
+    --Lime-Green: hsl(163, 72%, 41%);
+    --Bright-Red: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --YouTube: hsl(348, 97%, 39%);
+
+    --Toggle-light: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --Toggle-dark: hsl(230, 22%, 74%);
+
+/* DARK THEME  */
+    /* --BG: hsl(230, 17%, 14%);
+    --Top-BG-Pattern: hsl(232, 19%, 15%);
+    --CardBG: hsl(228, 28%, 20%);
+    --Text-blue: hsl(228, 34%, 66%);
+    --Text: hsl(0, 0%, 100%); */
+
+/* LIGHT THEME */
+    --BG: hsl(0, 0%, 100%);
+    --Top-BG-Pattern: hsl(225, 100%, 98%);
+    --CardBG: hsl(227, 47%, 96%);
+    --Text-blue: hsl(228, 12%, 44%);
+    --Text: hsl(230, 17%, 14%);
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    text-decoration: none; 
+}
+
+*,  
+*::before, 
+*::after {
+    box-sizing: inherit; 
+}
+
+html {
+    font-size: 62.5%; 
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 50%; 
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--BG);
+}
+
+.container {
+    padding: 0 14.3rem;
+}
+
+/*/////////////////////////////////////////////////////////
+/////////////////////// HEADER STYLING ///////////////////
+/////////////////////////////////////////////////////////*/
+
+.header {
+    display: flex; 
+    justify-content: space-between;
+    height: 24rem; 
+    padding-top: 3.8rem;  
+    background-color: var(--Top-BG-Pattern);
+}
+
+.title {
+    font-size: 2.7rem;
+    letter-spacing: .09rem;
+    font-weight: 600;
+    color: var(--Text);
+}
+.totalFollowers {
+    font-size: 1.4rem; 
+    font-weight: 600; 
+    color: var(--Text-blue);
+    padding-top: .3rem; 
+    padding-left: .2rem; 
+    letter-spacing: .03rem; 
+}
+
+.mobileHR {
+    opacity: 0; 
+    width:0; 
+    height: 0; 
+    
+}
+
+.header-switch {
+    transform: translateY(1rem);
+}
+
+.darkModeText {
+    display: inline-block;  
+    margin-right: 1rem; 
+    font-size: 1.2rem;
+    font-weight: 600; 
+    letter-spacing: .2rem;
+    transform: translateY(40%);
+    color: var(--Text-blue)
+    
+    
+
+}
+
+.switch {
+    width: 4.6rem; 
+    height: 2.3rem; 
+    position: relative; 
+    display: inline-block;
+}
+
+.switch input {
+    opacity: 0; 
+    height: 0px; 
+    width:0px; 
+}
+
+.slider {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-image: none; 
+    background-color: var(--Toggle-dark); 
+    
+    height: 100%; 
+    width: 100%;
+    border-radius: 100px; 
+    cursor: pointer;
+    transition: box-shadow .1s ease-in
+}
+
+.slider::before {
+    position: absolute; 
+    content:'';
+    top: .25rem; 
+    right: .33rem; 
+    height: 1.75rem; 
+    width: 1.75rem; 
+    border-radius: 100px; 
+    background-color: var(--Top-BG-Pattern);
+    transition: transform .1s ease-in;
+}
+
+.slider:hover {
+    box-shadow: 0 2px 5px var(--Text-blue);
+}
+
+.switch input:checked + .slider {
+    
+    background-image: var(--Toggle-light);
+
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(-2.2rem);
+}
+
+/*/////////////////////////////////////////////////////////
+/////////////////////// MAIN ACCOUNTS  ///////////////////
+/////////////////////////////////////////////////////////*/
+
+.accountsContainer {
+    display: flex; 
+    position: relative; 
+    transform: translateY(-49%);
+    justify-content: space-between;
+}
+
+.totals {
+    height: 21.5rem; 
+    flex-basis: 25rem; 
+    background-color: var(--CardBG);
+    border-radius: .7rem;
+    text-align: center;
+    padding: 2.5rem; 
+    margin-right: 1rem;
+    overflow: hidden; 
+}
+/* @media screen and (max-width: 950px) {
+    .totals {
+        padding: 2rem 1rem; 
+    }
+} */
+.totals:last-of-type {
+    margin-right: 0; 
+}
+
+.totals--facebook {
+    border-top: 5px solid var(--Facebook);
+}
+.totals--twitter {
+    border-top: 5px solid var(--Twitter);
+}
+.totals--instagram {
+   position: relative; 
+}
+.totals--instagram::before {
+    position: absolute; 
+    content: '';
+    height: 5px; 
+    background-image: var(--Instagram); 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    z-index: 2;
+    border-radius: .7rem .7rem 0 0 ;
+ }
+
+.totals--youtube {
+    border-top: 5px solid var(--YouTube);
+}
+.totals img {
+    transform: translateY(.6rem)
+}
+.handle {
+    padding-left: .5rem; 
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    color: var(--Text-blue)
+}
+
+.followersTotal {
+    font-size: 5rem;
+    font-weight: 700;
+    padding-top: 2rem; 
+    color: var(--Text);
+}
+/* @media screen and (max-width: 950px) {
+    .followersTotal {
+        font-size: 3rem;
+    }
+} */
+
+.followersText {
+    font-size: 1.3rem; 
+    text-transform: uppercase; 
+    letter-spacing: .3rem;
+    font-weight: 400; 
+    color: var(--Text-blue)
+}
+/* @media screen and (max-width: 950px) {
+    .followersText {
+        font-size: .8rem;
+    }
+} */
+.newToday {
+    padding-top: 3rem; 
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    width: fit-content; 
+    margin: 0 auto; 
+}
+
+/*/////////////////////////////////////////////////////////
+////////////  UP / DOWN -REUSABLE     ///////////////////
+/////////////////////////////////////////////////////////*/
+
+.green {
+    position: relative; 
+    color: var(--Lime-Green)
+}
+.green::before {
+    position: absolute; 
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent; 
+    border-right: 5px solid transparent; 
+    border-bottom: 5px solid var(--Lime-Green);
+    left: -1.3rem;
+    bottom: .4rem;  
+}
+.red {
+    position: relative; 
+    color: var(--Bright-Red)
+}
+.red::before {
+    position: absolute; 
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent; 
+    border-right: 5px solid transparent; 
+    border-top: 5px solid var(--Bright-Red);
+    left: -1.3rem;
+    bottom: .4rem;  
+}
+
+
+
+/*/////////////////////////////////////////////////////////
+////////////  OVERVIEW            ///////////////////
+/////////////////////////////////////////////////////////*/
+
+
+.overview {
+    transform: translateY(-5.5rem)
+}
+
+.overviewToday {
+    font-size: 2.4rem; 
+    color: var(--Text-blue);
+
+}
+.grid {
+    width: 100%; 
+    display: grid;
+    grid-template-rows: 12.5rem 12.5rem; 
+    grid-template-columns: minMax(0, 25rem) minMax(0, 25rem) minMax(0, 25rem) minMax(0, 25rem);
+    column-gap: 1rem;
+    row-gap: 2.5rem; 
+    padding-top: 2rem;
+    justify-content: space-between;
+}
+
+.overviewBox {
+    background-color: var(--CardBG);
+    justify-self: center;
+    width: 100%; 
+    height: 12.5rem;
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    padding: 2.5rem 2.5rem; 
+    row-gap: auto;
+    column-gap: auto; 
+    border-radius: .5rem;
+}
+
+.overview--type {
+    align-self: start; 
+    justify-self: start; 
+    font-size: 1.4rem
+    color: var
+}
+
+.overview--image {
+    align-self: start; 
+    justify-self: end; 
+}
+.overview--count {
+    align-self: end; 
+    justify-self: start; 
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.overview--percent {
+    align-self: end; 
+    justify-self: end; 
+    font-weight: 700; 
+    font-size: 1.2rem
+}
+
+.attribution {
+    margin-top: 1rem;
+    color: var(--Text)
+}
+.attribution a, a:visited {
+    text-decoration: none; 
+    color: var(--Text-blue);
+    font-weight: 800; 
+}
+
+
+@media screen and (max-width: 800px) {
+    
+    html {
+        font-size: 62.5%; 
+    }
+    
+    .container {
+        padding: 2rem; 
+        align-items: center;
+    }
+    
+
+    .header {
+        flex-direction: column; 
+        height: 100%;
+        background-color: var(--BG);
+    }
+
+    .mobileHR {
+        opacity: .5; 
+        width: 33rem; 
+        border-top: 2px solid var(--Text-blue); 
+        border-radius: 1px;
+        margin-top: 1.3rem; 
+    }
+
+    .header-switch {
+        width: 33rem; 
+        /* margin: 2rem; */
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+    }
+    .darkModeText {
+        transform: translateY(0);
+    }
+    .accountsContainer {
+        flex-direction: column;
+        transform: translateY(0)
+    }
+
+    .totals {
+        flex-basis: 21rem;
+        width: 33rem; 
+        margin-bottom: 2rem; 
+        margin-right: 0; 
+    }
+
+    .grid {
+        width: 100%; 
+        display: grid;
+        grid-template-rows: auto(12.5rem); 
+        grid-template-columns: 32rem; 
+        column-gap: 1rem;
+        row-gap: 2.5rem; 
+        padding-top: 2rem;
+        justify-content: center; 
+    }
+
+}
