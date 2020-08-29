@@ -344,8 +344,8 @@ body {
 .overview--type {
     align-self: start; 
     justify-self: start; 
-    font-size: 1.4rem
-    color: var
+    font-size: 1.4rem;
+    color: var(--Text-blue);
 }
 
 .overview--image {
@@ -357,6 +357,7 @@ body {
     justify-self: start; 
     font-size: 3rem;
     font-weight: 700;
+    color: var(--Text);
 }
 
 .overview--percent {
