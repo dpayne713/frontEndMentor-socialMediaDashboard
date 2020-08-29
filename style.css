@@ -191,11 +191,6 @@ body {
     overflow: hidden; 
 }
 
-accountsContainer a {
-    width: 100%; 
-    height: 100%; 
-}
-
 .totals:last-of-type {
     margin-right: 0; 
 }
